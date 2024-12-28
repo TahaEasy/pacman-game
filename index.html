@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pacman</title>
+    <link rel="stylesheet" href="./fonts/css/all.min.css" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <div class="center-container">
+          <p>
+            <span>Score: <span id="scoreEl">0</span></span>
+          </p>
+          <div>
+            <button id="pause-game">
+              <i class="fa-solid fa-pause"></i>
+            </button>
+            <button id="play-game"><i class="fa-solid fa-play"></i></button>
+            <button id="volume-game"><i class="fa-solid fa-volume"></i></button>
+            <button id="unvolume-game">
+              <i class="fa-solid fa-volume-slash"></i>
+            </button>
+          </div>
+        </div>
+        <!-- CANVAS IS HERE! -->
+        <canvas></canvas>
+        <!-- CANVAS IS HERE! -->
+        <div class="hearts">
+          <div class="hearts-contianer" id="hearts-contianer"></div>
+        </div>
+      </div>
+    </div>
+    <img src="./img/text/ready.svg" alt="ready" class="text" id="ready" />
+
+    <div id="end-game-box">
+      <div class="game-over-container">
+        <img
+          src="./img/text/game_over.svg"
+          alt="lost"
+          class="text"
+          id="game-over"
+        />
+      </div>
+      <h2 id="end-game-text">You Won!</h2>
+      <p>score: <span id="score"></span></p>
+      <button class="restart" id="end-game-button">
+        <i class="fa-solid fa-arrow-left-rotate"></i>
+      </button>
+    </div>
+    <div id="start-game-box">
+      <h1>Pacman Game</h1>
+      <button id="start-game-button">Start</button>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>

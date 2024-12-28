@@ -1,0 +1,185 @@
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+body {
+  margin: 0;
+  background-color: black;
+}
+
+button {
+  background-color: transparent;
+  color: white;
+  outline: none;
+  border: none;
+  margin: 8px;
+  cursor: pointer;
+  padding: 0;
+}
+
+p {
+  color: white;
+  font-family: sans-serif;
+  font-size: 14px;
+  margin: 8px 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.text {
+  display: none;
+  position: absolute;
+  top: 407px;
+  left: 50%;
+  width: 10rem;
+  transform: translate(-50%, -50%);
+  animation-name: blink;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+  transition: all 0.5s;
+}
+
+#play-game {
+  display: none;
+}
+
+#ready {
+  width: 6rem;
+}
+
+.game-over-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+#game-over {
+  display: block;
+  position: static;
+  transform: none;
+}
+
+#end-game-box {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 250px;
+  height: max-content;
+  border-radius: 8px;
+  text-align: center;
+  background-color: darkkhaki;
+}
+
+#end-game-button {
+  background-color: rgb(250, 235, 215);
+  color: black;
+  font-size: large;
+  padding: 1rem;
+  border-radius: 3px;
+
+  &:hover {
+    background-color: rgb(250, 235, 215, 0.7);
+  }
+}
+
+#start-game-box {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 250px;
+  height: max-content;
+  border-radius: 8px;
+  text-align: center;
+  background-color: coral;
+}
+
+#start-game-button {
+  background-color: rgb(110, 212, 27);
+  color: white;
+  font-size: large;
+  padding: 1rem;
+  border-radius: 3px;
+
+  &:hover {
+    background-color: rgb(110, 212, 27, 0.7);
+  }
+}
+
+#unvolume-game {
+  display: none;
+}
+
+.hearts {
+  display: flex;
+  justify-content: end;
+  align-items: start;
+}
+
+.hearts-contianer {
+  display: flex;
+  justify-content: start;
+}
+
+.heart {
+  position: relative;
+  margin: 3px 5px;
+  height: 1rem;
+  width: 1rem;
+  background-color: yellow;
+  border-radius: 1rem;
+  transition: all 2s;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 30%;
+    left: 45%;
+    height: 3px;
+    width: 3px;
+    border-radius: 1rem;
+    transform: translateY(-50%);
+    background: black;
+    z-index: 2;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    height: 8px;
+    width: 8px;
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+    transform: translateY(-50%);
+    background: black;
+    z-index: 2;
+  }
+}
+
+.heart-broke {
+  opacity: 0;
+  visibility: hidden;
+}
